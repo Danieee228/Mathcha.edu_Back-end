@@ -5,7 +5,6 @@ import com.math.mathcha.dto.request.LoginDTO;
 import com.math.mathcha.dto.request.UserDTO;
 import com.math.mathcha.dto.response.ResLoginDTO;
 import com.math.mathcha.entity.User;
-import com.math.mathcha.service.OtpService;
 import com.math.mathcha.service.authService.AuthService;
 import com.math.mathcha.service.userService.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
@@ -27,9 +25,6 @@ public class AuthController {
 
     @Autowired
     AuthService authService;
-
-    @Autowired
-    OtpService otpService;
 
 
     private final UserService userService ;

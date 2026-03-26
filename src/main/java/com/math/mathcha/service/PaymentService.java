@@ -13,7 +13,9 @@ import com.math.mathcha.repository.EnrollmentRepository;
 import com.math.mathcha.repository.PaymentRepository;
 import com.math.mathcha.repository.UserRepository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.Mac;
@@ -29,9 +31,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PaymentService {
+    @Value("${vnpay.tmn.code}")
+    private String tmnCode;
 
+    @Value("${vnpay.secret.key}")
+    private String secretKey;
 
     @Autowired
     PaymentRepository paymentRepository;
@@ -52,9 +58,6 @@ public class PaymentService {
 
 
 
-
-        String tmnCode = "UEFQX38O";
-        String secretKey = "APINBHTVCCO5CGZIN8NL50TQ1OUEJFYO";
         String vnpUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         String returnUrl = "http://mathcha.online?student_id=" + rechargeRequestDTO.getStudent_id() + "&course_id=" + rechargeRequestDTO.getCourse_id();
 //        String returnUrl = "http://159.223.39.71?student_id=" + rechargeRequestDTO.getStudent_id() + "&course_id=" + rechargeRequestDTO.getCourse_id();

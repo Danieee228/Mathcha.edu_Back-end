@@ -70,4 +70,10 @@ public class PaymentController {
         List<PaymentDTO> payments = paymentService.getPaymentsByUserIdAndPaymentYear(user_id, payment_year);
         return ResponseEntity.ok(payments);
     }
+    @PostMapping("/fake-success")
+    @PreAuthorize("hasRole('PARENT')")
+    public ResponseEntity<String> fakePaymentSuccess(@RequestBody RechargeRequestDTO paymentDTO) {
+        paymentService.savePayment(paymentDTO);
+        return new ResponseEntity<>("Thanh toán thành công (Bypass VNPAY)", HttpStatus.OK);
+    }
 }
