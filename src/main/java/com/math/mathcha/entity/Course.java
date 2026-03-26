@@ -23,7 +23,7 @@ public class Course {
     private int course_id;
     @Column(name = "title")
     private String title;
-    @Column(name = "description")
+    @Column(name = "description, columnDefinition = \"TEXT\"")
     private String description;
     @Column(name = "image")
     private String image;
