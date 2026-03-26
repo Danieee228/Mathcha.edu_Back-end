@@ -48,7 +48,8 @@ public class SecurityConfiguration {
             "/lessons/topic/{topic_id}",
             "/course/category/{category_id}",
             "/category/get/all",
-            "/category/get/{category_id}"
+            "/category/get/{category_id}",
+            "/health"
     };
 
 
