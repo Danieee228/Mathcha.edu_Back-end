@@ -1,9 +1,9 @@
 # Mathcha Edu - Backend (SWP391_Server)
 
-## Giới thiệu
+##📖 Giới thiệu
 Mathcha Edu là hệ thống API Backend cung cấp nền tảng học Toán dành cho học sinh tiểu học. Hệ thống hỗ trợ quản lý khóa học, bài giảng, bài kiểm tra (quiz), theo dõi tiến độ học tập và quản lý lịch sử giao dịch.
 
-## Các chức năng chính
+##🚀 Các chức năng chính
 * **Xác thực & Phân quyền (Auth & Security):** Đăng nhập/Đăng ký sử dụng JWT. Phân quyền chặt chẽ với các role: `ADMIN`, `MANAGER`, `CONTENT_MANAGER`, `PARENT`, và `STUDENT`.
 * **Quản lý Khóa học (Course Management):** Quản lý cấu trúc phân cấp: Danh mục (Category) -> Khóa học (Course) -> Chương (Chapter) -> Chủ đề (Topic) -> Bài học (Lesson).
 * **Hệ thống Bài tập & Kiểm tra (Quiz & Questions):** * Tạo bài kiểm tra ngẫu nhiên theo Chủ đề, Chương hoặc Khóa học.
@@ -52,7 +52,7 @@ Mathcha Edu là hệ thống API Backend cung cấp nền tảng học Toán dà
    ```
    *Server sẽ chạy ở cổng mặc định: `http://localhost:8080`*
 
-## Triển khai với Docker (Deployment)
+##🐳 Triển khai với Docker (Deployment)
 
 Dự án đã có sẵn `Dockerfile`. Bạn có thể dễ dàng đóng gói và chạy ứng dụng trên bất kỳ server nào có Docker:
 
@@ -65,12 +65,12 @@ docker build -t mathcha-edu-backend .
 docker run -d -p 10000:10000 --name mathcha-backend mathcha-edu-backend
 ```
 
-## Tài liệu API (API Documentation)
+##📚 Tài liệu API (API Documentation)
 Dự án sử dụng Swagger để tự động tạo tài liệu API. Sau khi khởi chạy ứng dụng thành công (chạy local mặc định ở port 8080), bạn có thể truy cập danh sách API và test trực tiếp tại:
 * **Swagger UI:** `http://localhost:8080/swagger-ui/index.html`
 * **OpenAPI Specs:** `http://localhost:8080/v3/api-docs`
 
-## Tài khoản mặc định ban đầu
+##👤 Tài khoản mặc định ban đầu
 *Khi ứng dụng khởi chạy lần đầu tiên, nếu database trống, hệ thống sẽ tự động tạo một tài khoản Admin mặc định để bạn thao tác:*
 * **Username:** `admin`
 * **Password:** `admin`
